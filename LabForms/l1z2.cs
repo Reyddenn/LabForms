@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace LabForms
+{
+    public partial class l1z2 : Form
+    {
+        public l1z2()
+        {
+
+            InitializeComponent();
+            int a = -7;
+            int b = 3;
+            double h = 0.01;
+
+            double x = a;
+            double y = 0;
+
+            chart1.Series[0].Points.Clear();
+            chart1.Series[1].Points.Clear();
+
+            while (x <= b)
+            {
+                chart1.Series[0].Points.AddXY(x, findybyx(x));
+                x += h;
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            chart1.Series[1].Points.Clear();
+            double numb = 0;
+            string input = textBox1.Text;
+            input = input.Replace('.', ',');
+            try { numb = double.Parse(input); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            chart1.Series[1].Points.AddXY(numb, findybyx(numb));
+            textBox2.Text = findybyx(numb).ToString();
+
+        }
+
+        private double findybyx(double x)
+        {
+            double y = 0;
+            if (x >= -7 && x < -6) y = 1;
+            else if (x >= -6 && x < -4) y = -0.5 * x - 2;
+            else if (x >= -4 && x < 0) y = Math.Sqrt(-4 * x - x * x);
+            else if (x >= 0 && x < 2) y = -(Math.Sqrt(2 * x - x * x));
+            else if (x >= 2 && x <= 3) y = -x + 2;
+            else if (x < -7 && x > 3) y = 0;
+            return y;
+            }
+
+        private void l1z2_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
