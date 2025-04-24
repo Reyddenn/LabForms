@@ -34,5 +34,11 @@ namespace LabForms
             l1z3 l1z3 = new l1z3();
             l1z3.ShowDialog();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            l2z3 l2z3 = new l2z3();
+            l2z3.ShowDialog();
+        }
     }
 }

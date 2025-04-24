@@ -31,16 +31,23 @@ namespace LabForms
                 chart1.Series[0].Points.AddXY(x, findybyx(x));
                 x += h;
             }
+
+            // L2
+
+            dataGridView1.ColumnCount = 2;
+            dataGridView1.Columns[0].Name = "x";
+            dataGridView1.Columns[1].Name = "y";
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
             
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             chart1.Series[1].Points.Clear();
             double numb = 0;
-            string input = textBox1.Text;
-            input = input.Replace('.', ',');
-            try { numb = double.Parse(input); }
+            try { numb = double.Parse(textBox1.Text.Replace('.', ',')); }
             catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
             chart1.Series[1].Points.AddXY(numb, findybyx(numb));
             textBox2.Text = findybyx(numb).ToString();
@@ -62,6 +69,37 @@ namespace LabForms
         private void l1z2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void create3rddia(double x1, double x2, double dx)
+        {
+            chart1.Series[2].Points.Clear();
+            dataGridView1.Rows.Clear();
+            double y = 0;
+            double x = x1;
+
+            for (int i = 0; x < x2; i++)
+            {
+                y = findybyx(x);
+                dataGridView1.Rows.Add(1);
+                dataGridView1.Rows[i].Cells[0].Value = x;
+                dataGridView1.Rows[i].Cells[1].Value = y;
+                chart1.Series[2].Points.AddXY(x, y);
+                x += dx;
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            double x1; double x2; double dx;
+            try { x1 = double.Parse(textBox4.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            try { x2 = double.Parse(textBox3.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            try { dx = double.Parse(textBox5.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            create3rddia(x1, x2, dx);
         }
     }
 }

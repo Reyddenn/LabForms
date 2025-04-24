@@ -65,6 +65,12 @@
     <Compile Include="l1z3.Designer.cs">
       <DependentUpon>l1z3.cs</DependentUpon>
     </Compile>
+    <Compile Include="l2z3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="l2z3.Designer.cs">
+      <DependentUpon>l2z3.cs</DependentUpon>
+    </Compile>
     <Compile Include="List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="l1z3.resx">
       <DependentUpon>l1z3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="l2z3.resx">
+      <DependentUpon>l2z3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List.resx">
       <DependentUpon>List.cs</DependentUpon>
@@ -110,6 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\С#Л2З3В1 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\17.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

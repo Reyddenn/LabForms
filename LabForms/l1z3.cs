@@ -20,6 +20,14 @@ namespace LabForms
             InitializeComponent();
             chart1.Series[0].Points.Clear();
             chart1.Series[1].Points.Clear();
+
+            dataGridView1.ColumnCount = 3;
+            dataGridView1.Columns[0].Name = "x";
+            dataGridView1.Columns[1].Name = "y";
+            dataGridView1.Columns[2].Name = "Результат";
+            dataGridView1.Rows.Add(10);
+            dataGridView1.Columns[2].ReadOnly = true;
+            
         }
 
         private void l1z3_Load(object sender, EventArgs e)
@@ -98,6 +106,29 @@ namespace LabForms
             bool inShadedArea = (angle >= 45 && angle <= 90) || (angle >= 225 && angle <= 270);
             if (inside && inShadedArea) return true;
             else return false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            chart1.Series[2].Points.Clear();
+            double[] x = new double[10];
+            double[] y = new double[10];
+            for (int i = 0; i < 10; i++)
+            {
+                try { x[i] = double.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString()); }
+                catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+
+                try { y[i] = double.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()); }
+                catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            }
+
+            for (int i = 0;i < 10;i++)
+            {
+                chart1.Series[2].Points.AddXY(x[i], y[i]);
+                if (isinCircle(x[i], y[i], r)) dataGridView1.Rows[i].Cells[2].Value = "Попал"; 
+                else dataGridView1.Rows[i].Cells[2].Value = "НЕ попал";
+
+            }
         }
     }
 }
