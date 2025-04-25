@@ -19,26 +19,32 @@ namespace LabForms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            l1z1 form2 = new l1z1();
+            l2z1 form2 = new l2z1();
             form2.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            l1z2 form1 = new l1z2();
+            l2z2 form1 = new l2z2();
             form1.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            l1z3 l1z3 = new l1z3();
+            l2z3 l1z3 = new l2z3();
             l1z3.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            l2z3 l2z3 = new l2z3();
+            l3z3 l2z3 = new l3z3();
             l2z3.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            l1 l1 = new l1();
+            l1.ShowDialog();
         }
     }
 }

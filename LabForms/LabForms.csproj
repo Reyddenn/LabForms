@@ -47,29 +47,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="l1z2.cs">
+    <Compile Include="l1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="l1z2.Designer.cs">
-      <DependentUpon>l1z2.cs</DependentUpon>
+    <Compile Include="l1.Designer.cs">
+      <DependentUpon>l1.cs</DependentUpon>
     </Compile>
-    <Compile Include="l1z1.cs">
+    <Compile Include="l1_About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="l1z1.Designer.cs">
-      <DependentUpon>l1z1.cs</DependentUpon>
+    <Compile Include="l1_About.Designer.cs">
+      <DependentUpon>l1_About.cs</DependentUpon>
     </Compile>
-    <Compile Include="l1z3.cs">
+    <Compile Include="l1_Begin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="l1z3.Designer.cs">
-      <DependentUpon>l1z3.cs</DependentUpon>
+    <Compile Include="l1_Begin.Designer.cs">
+      <DependentUpon>l1_Begin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="l2z2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="l2z2.Designer.cs">
+      <DependentUpon>l2z2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="l2z1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="l2z1.Designer.cs">
+      <DependentUpon>l2z1.cs</DependentUpon>
     </Compile>
     <Compile Include="l2z3.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="l2z3.Designer.cs">
       <DependentUpon>l2z3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="l3z3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="l3z3.Designer.cs">
+      <DependentUpon>l3z3.cs</DependentUpon>
     </Compile>
     <Compile Include="List.cs">
       <SubType>Form</SubType>
@@ -79,17 +97,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="l1z2.resx">
-      <DependentUpon>l1z2.cs</DependentUpon>
+    <EmbeddedResource Include="l1.resx">
+      <DependentUpon>l1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="l1z1.resx">
-      <DependentUpon>l1z1.cs</DependentUpon>
+    <EmbeddedResource Include="l1_About.resx">
+      <DependentUpon>l1_About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="l1z3.resx">
-      <DependentUpon>l1z3.cs</DependentUpon>
+    <EmbeddedResource Include="l1_Begin.resx">
+      <DependentUpon>l1_Begin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="l2z2.resx">
+      <DependentUpon>l2z2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="l2z1.resx">
+      <DependentUpon>l2z1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="l2z3.resx">
       <DependentUpon>l2z3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="l3z3.resx">
+      <DependentUpon>l3z3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List.resx">
       <DependentUpon>List.cs</DependentUpon>

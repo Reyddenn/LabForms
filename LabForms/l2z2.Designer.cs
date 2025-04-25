@@ -1,6 +1,6 @@
 ﻿namespace LabForms
 {
-    partial class l1z2
+    partial class l2z2
     {
         /// <summary>
         /// Обязательная переменная конструктора.
