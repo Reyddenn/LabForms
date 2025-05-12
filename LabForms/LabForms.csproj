@@ -83,11 +83,11 @@
     <Compile Include="l2z3.Designer.cs">
       <DependentUpon>l2z3.cs</DependentUpon>
     </Compile>
-    <Compile Include="l3z3.cs">
+    <Compile Include="l4z1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="l3z3.Designer.cs">
-      <DependentUpon>l3z3.cs</DependentUpon>
+    <Compile Include="l4z1.Designer.cs">
+      <DependentUpon>l4z1.cs</DependentUpon>
     </Compile>
     <Compile Include="List.cs">
       <SubType>Form</SubType>
@@ -115,8 +115,8 @@
     <EmbeddedResource Include="l2z3.resx">
       <DependentUpon>l2z3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="l3z3.resx">
-      <DependentUpon>l3z3.cs</DependentUpon>
+    <EmbeddedResource Include="l4z1.resx">
+      <DependentUpon>l4z1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List.resx">
       <DependentUpon>List.cs</DependentUpon>

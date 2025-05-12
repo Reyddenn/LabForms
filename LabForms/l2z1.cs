@@ -31,7 +31,7 @@ namespace LabForms
                 inp = Int32.Parse(txt) % 100;
                 ost = inp % 10;
                 }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            catch (Exception ex) { MessageBox.Show("Некорректный ввод"); return; }
 
             if (ost == 1 && !(inp > 10 && inp < 20)) label1.Text = "Рубль";
             else if (ost >= 2 && ost <= 4 && !(inp > 10 && inp < 20)) label1.Text = "Рубля";

@@ -32,7 +32,7 @@ namespace LabForms
                 x += h;
             }
 
-            // L2
+            // L3
 
             dataGridView1.ColumnCount = 2;
             dataGridView1.Columns[0].Name = "x";
@@ -56,13 +56,15 @@ namespace LabForms
 
         private double findybyx(double x)
         {
+            double r1 = 1;
+            double r2 = 2.5;  
             double y = 0;
-            if (x >= -7 && x < -6) y = 1;
-            else if (x >= -6 && x < -4) y = -0.5 * x - 2;
-            else if (x >= -4 && x < 0) y = Math.Sqrt(-4 * x - x * x);
-            else if (x >= 0 && x < 2) y = -(Math.Sqrt(2 * x - x * x));
-            else if (x >= 2 && x <= 3) y = -x + 2;
-            else if (x < -7 && x > 3) y = 0;
+            if (x >= -7 && x < -6 && !(x >= -2 - r2 && x < -2 + r2) && !(x >= (1 - r1) && x < (1 + r1))) y = 1;
+            else if (x >= -6 && x <= -4 && !(x >= -2 - r2 && x < -2 + r2) && !(x >= (1 - r1) && x < (1 + r1))) y = -0.5 * x - 2;
+            else if (x >= -2 - r2 && x < -2 + r2 && !(x >= (1 - r1) && x < (1 + r1))) y = Math.Sqrt(r2*r2 - (x + 2) * (x + 2));         //Math.Sqrt(-4 * x - x * x);
+            else if (x >= (1 - r1) && x < (1 + r1)) y = -Math.Sqrt(r1*r1 - (x - 1) * (x - 1));    //-(Math.Sqrt(2 * x - x * x));
+            else if (x >= 2 && x <= 3 &&    !(x >= -2 - r2 && x < -2 + r2)  && !(x >= (1 - r1) && x < (1 + r1))) y = -x + 2;
+            else if (x < -7 && x > 3) y = 0; 
             return y;
             }
 

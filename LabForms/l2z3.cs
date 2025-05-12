@@ -52,13 +52,13 @@ namespace LabForms
 
             if (isinCircle(x, y, r))
             {
-                label4.Text = $"Точка с координатами ({x},{y}) находится в закрашенной области";
+                label4.Text = $"({x},{y}) находится в области";
                 chart1.Series[1].Points.AddXY(x, y);
             }
 
             else
             {
-                label4.Text = $"Точка с координатами ({x},{y}) НЕ находится в закрашенной области";
+                label4.Text = $"({x},{y}) НЕ находится в области";
                 chart1.Series[1].Points.AddXY(x, y);
             }
 
@@ -115,18 +115,29 @@ namespace LabForms
             double[] y = new double[10];
             for (int i = 0; i < 10; i++)
             {
+                if(dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[1].Value != null) { 
+
                 try { x[i] = double.Parse(dataGridView1.Rows[i].Cells[0].Value.ToString()); }
                 catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
 
                 try { y[i] = double.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()); }
                 catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+
+                chart1.Series[2].Points.AddXY(x[i], y[i]);
+                if (isinCircle(x[i], y[i], r)) dataGridView1.Rows[i].Cells[2].Value = "Попал";
+                else dataGridView1.Rows[i].Cells[2].Value = "НЕ попал";
+
+                    dataGridView1.Rows[i].Cells[0].ReadOnly = true;
+                    dataGridView1.Rows[i].Cells[1].ReadOnly = true;
+
+                }
+
+                
             }
 
             for (int i = 0;i < 10;i++)
             {
-                chart1.Series[2].Points.AddXY(x[i], y[i]);
-                if (isinCircle(x[i], y[i], r)) dataGridView1.Rows[i].Cells[2].Value = "Попал"; 
-                else dataGridView1.Rows[i].Cells[2].Value = "НЕ попал";
+                
 
             }
         }

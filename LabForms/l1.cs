@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LabForms
 {
@@ -19,6 +21,12 @@ namespace LabForms
         public l1()
         {
             InitializeComponent();
+            using (FileStream fs = File.Create(path, 1024))
+            {
+                byte[] info = new UTF8Encoding(true).GetBytes("");
+                fs.Write(info, 0, info.Length);
+                fs.Close();
+            }
             
         }
 
@@ -41,7 +49,11 @@ namespace LabForms
         {
             using (StreamReader sr = File.OpenText(path))
             {
-                MessageBox.Show(sr.ReadLine());
+
+                string message = sr.ReadLine();
+                if (message == null) MessageBox.Show("Сначала зайдите в Begin");
+                else MessageBox.Show(message); 
+                
                 sr.Close();
             }
    

@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace LabForms
 {
-    public partial class l3z3 : Form
+    public partial class l4z1 : Form
     {
         double x;
         double y;
-        double dx;
-        double e;
-        public l3z3()
+
+        public l4z1()
         {
             InitializeComponent();
             
@@ -27,7 +26,6 @@ namespace LabForms
             dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.Columns[1].ReadOnly = true;
             dataGridView1.Columns[2].ReadOnly = true;
-            MessageBox.Show(Talor(0.01, 2, 0.005, 1).ToString());
         }
 
         private void l2z3_Load(object sender, EventArgs e)
@@ -54,6 +52,28 @@ namespace LabForms
 
             }
             return y;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double x1;
+            double x2;
+            double dx;
+            double e1;
+
+            try { x1 = double.Parse(textBox1.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+
+            try { x2 = double.Parse(textBox2.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+
+            try { dx = double.Parse(textBox3.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+
+            try { e1 = double.Parse(textBox4.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+
+            Talor(x1, x2 , dx , e1);
         }
     }
 }

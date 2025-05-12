@@ -36,5 +36,10 @@ namespace LabForms
                 Close();
             }
         }
+
+        private void l1_Begin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

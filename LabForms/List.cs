@@ -37,7 +37,7 @@ namespace LabForms
 
         private void button6_Click(object sender, EventArgs e)
         {
-            l3z3 l2z3 = new l3z3();
+            l4z1 l2z3 = new l4z1();
             l2z3.ShowDialog();
         }
 
@@ -46,5 +46,6 @@ namespace LabForms
             l1 l1 = new l1();
             l1.ShowDialog();
         }
+
     }
 }
