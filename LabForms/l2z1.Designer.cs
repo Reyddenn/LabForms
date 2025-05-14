@@ -37,7 +37,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(146, 71);
+            this.label1.Location = new System.Drawing.Point(147, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 29);
             this.label1.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(256, 61);
+            this.button1.Location = new System.Drawing.Point(257, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(74, 47);
             this.button1.TabIndex = 1;
@@ -55,21 +55,21 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 75);
+            this.textBox1.Location = new System.Drawing.Point(13, 39);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(128, 20);
             this.textBox1.TabIndex = 2;
             // 
-            // l1z1
+            // l2z1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 178);
+            this.ClientSize = new System.Drawing.Size(355, 98);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "l1z1";
-            this.Text = "Form2";
+            this.Name = "l2z1";
+            this.Text = "Склонятор";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

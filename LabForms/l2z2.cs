@@ -12,25 +12,18 @@ namespace LabForms
 {
     public partial class l2z2 : Form
     {
+        double r1;
+        double r2;
         public l2z2()
         {
 
             InitializeComponent();
-            int a = -7;
-            int b = 3;
-            double h = 0.01;
-
-            double x = a;
-            double y = 0;
+            
 
             chart1.Series[0].Points.Clear();
             chart1.Series[1].Points.Clear();
 
-            while (x <= b)
-            {
-                chart1.Series[0].Points.AddXY(x, findybyx(x));
-                x += h;
-            }
+           
 
             // L3
 
@@ -45,19 +38,37 @@ namespace LabForms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            chart1.Series[0].Points.Clear();
+            int a = -7;
+            int b = 3;
+            double h = 0.01;
+
+            double x = a;
+            double y = 0;
+
             chart1.Series[1].Points.Clear();
             double numb = 0;
             try { numb = double.Parse(textBox1.Text.Replace('.', ',')); }
             catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
-            chart1.Series[1].Points.AddXY(numb, findybyx(numb));
-            textBox2.Text = findybyx(numb).ToString();
+            chart1.Series[1].Points.AddXY(numb, findybyx(numb, r1, r2));
+            textBox2.Text = findybyx(numb, r1, r2).ToString();
+
+            
+            try { r1 = double.Parse(textBox7.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            try { r2 = double.Parse(textBox6.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+
+            while (x <= b)
+            {
+                chart1.Series[0].Points.AddXY(x, findybyx(x, r1, r2));
+                x += h;
+            }
 
         }
 
-        private double findybyx(double x)
+        private double findybyx(double x, double r1 = 1, double r2 = 2)
         {
-            double r1 = 1;
-            double r2 = 2.5;  
             double y = 0;
             if (x >= -7 && x < -6 && !(x >= -2 - r2 && x < -2 + r2) && !(x >= (1 - r1) && x < (1 + r1))) y = 1;
             else if (x >= -6 && x <= -4 && !(x >= -2 - r2 && x < -2 + r2) && !(x >= (1 - r1) && x < (1 + r1))) y = -0.5 * x - 2;
@@ -65,6 +76,7 @@ namespace LabForms
             else if (x >= (1 - r1) && x < (1 + r1)) y = -Math.Sqrt(r1*r1 - (x - 1) * (x - 1));    //-(Math.Sqrt(2 * x - x * x));
             else if (x >= 2 && x <= 3 &&    !(x >= -2 - r2 && x < -2 + r2)  && !(x >= (1 - r1) && x < (1 + r1))) y = -x + 2;
             else if (x < -7 && x > 3) y = 0; 
+
             return y;
             }
 
@@ -82,7 +94,7 @@ namespace LabForms
 
             for (int i = 0; x < x2; i++)
             {
-                y = findybyx(x);
+                y = findybyx(x, r1, r2);
                 dataGridView1.Rows.Add(1);
                 dataGridView1.Rows[i].Cells[0].Value = x;
                 dataGridView1.Rows[i].Cells[1].Value = y;

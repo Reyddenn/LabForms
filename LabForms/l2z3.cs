@@ -40,13 +40,13 @@ namespace LabForms
 
             x = 0; y = 0; r = 0;    
             try { x = double.Parse(textBox1.Text); }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            catch (Exception ex) { MessageBox.Show("Некорректный ввод!"); return; }
 
             try { y = double.Parse(textBox2.Text); }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            catch (Exception ex) { MessageBox.Show("Некорректный ввод!"); return; }
 
             try { r = double.Parse(textBox3.Text); }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            catch (Exception ex) { MessageBox.Show("Некорректный ввод!"); return; }
 
             circleCreator(x, y, r); 
 

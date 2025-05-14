@@ -58,5 +58,10 @@ namespace LabForms
             }
    
         }
+
+        private void l1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
