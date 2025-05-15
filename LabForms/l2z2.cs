@@ -47,17 +47,18 @@ namespace LabForms
             double y = 0;
 
             chart1.Series[1].Points.Clear();
+            
+
+            try { r1 = double.Parse(textBox7.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+            try { r2 = double.Parse(textBox6.Text.Replace('.', ',')); }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
+
             double numb = 0;
             try { numb = double.Parse(textBox1.Text.Replace('.', ',')); }
             catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
             chart1.Series[1].Points.AddXY(numb, findybyx(numb, r1, r2));
             textBox2.Text = findybyx(numb, r1, r2).ToString();
-
-            
-            try { r1 = double.Parse(textBox7.Text.Replace('.', ',')); }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
-            try { r2 = double.Parse(textBox6.Text.Replace('.', ',')); }
-            catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
 
             while (x <= b)
             {

@@ -41,20 +41,40 @@ namespace LabForms
             int c = 1;
             while  (x <= x2)
             {
+                /*
                 ex = ((Math.Pow(-1, c)) * (Math.Pow((x - 1), c + 1))) / (c + 1);
                 y += ex;
+                
+                
+                */
+
+                double sum = 0;
+                double term;
+                int n = 0;
+
+                do
+                {
+                    term = Math.Pow(-1, n) * Math.Pow(x - 1, n + 1) / (n + 1);
+                    sum += term;
+                    n++;
+                } while (Math.Abs(term) >= e);
+
                 dataGridView1.Rows.Add(1);
                 dataGridView1.Rows[c - 1].Cells[0].Value = x;
-                dataGridView1.Rows[c - 1].Cells[1].Value = ex;
-                dataGridView1.Rows[c - 1].Cells[2].Value = c;
+                dataGridView1.Rows[c - 1].Cells[1].Value = sum;
+                dataGridView1.Rows[c - 1].Cells[2].Value = n;
+
                 c++;
                 x += dx;
-
             }
             return y;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+    
+
+
+private void button1_Click(object sender, EventArgs e)
         {
             double x1;
             double x2;
