@@ -41,12 +41,6 @@ namespace LabForms
             int c = 1;
             while  (x <= x2)
             {
-                /*
-                ex = ((Math.Pow(-1, c)) * (Math.Pow((x - 1), c + 1))) / (c + 1);
-                y += ex;
-                
-                
-                */
 
                 double sum = 0;
                 double term;
@@ -69,9 +63,6 @@ namespace LabForms
             }
             return y;
         }
-
-
-    
 
 
 private void button1_Click(object sender, EventArgs e)

@@ -91,7 +91,7 @@
             this.groupBox2.Size = new System.Drawing.Size(140, 142);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ЛР4";
+            this.groupBox2.Text = "ЛР3";
             // 
             // button6
             // 
@@ -99,7 +99,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(96, 31);
             this.button6.TabIndex = 0;
-            this.button6.Text = "Задание 1";
+            this.button6.Text = "Задание 3";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -127,7 +127,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 490);
+            this.ClientSize = new System.Drawing.Size(549, 213);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

@@ -16,14 +16,10 @@ namespace LabForms
         double r2;
         public l2z2()
         {
-
             InitializeComponent();
             
-
             chart1.Series[0].Points.Clear();
             chart1.Series[1].Points.Clear();
-
-           
 
             // L3
 
@@ -32,8 +28,6 @@ namespace LabForms
             dataGridView1.Columns[1].Name = "y";
             dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.Columns[1].ReadOnly = true;
-            
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,7 +41,6 @@ namespace LabForms
             double y = 0;
 
             chart1.Series[1].Points.Clear();
-            
 
             try { r1 = double.Parse(textBox7.Text.Replace('.', ',')); }
             catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
@@ -95,7 +88,9 @@ namespace LabForms
 
             for (int i = 0; x < x2; i++)
             {
+                x = Math.Round(x, 5);
                 y = findybyx(x, r1, r2);
+                y = Math.Round(y, 5);
                 dataGridView1.Rows.Add(1);
                 dataGridView1.Rows[i].Cells[0].Value = x;
                 dataGridView1.Rows[i].Cells[1].Value = y;
